@@ -26,7 +26,7 @@ export default function CallToAction() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-5xl pr-[50rem] leading-normal">
+            <h3 className="text-5xl pr-[50rem] text-white leading-normal">
               Ready to make a change?
             </h3>
           </motion.div>

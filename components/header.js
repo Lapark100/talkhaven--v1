@@ -5,8 +5,11 @@ import logo from "../public/images/TalkHaven.png";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import useServerDarkMode from "@/hooks/use-server-dark-mode";
+import DarkMode from "./dark-mode";
 
 export default function Header() {
+  const theme = useServerDarkMode();
   const [openMenu, setOpenMenu] = useState(""); // Track which menu is open
   const [menuTimeout, setMenuTimeout] = useState(null); // Track timeout ID
 
@@ -141,9 +144,12 @@ export default function Header() {
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
             <Link href="/">Get Started</Link>
           </div>
-          <div>Dark/Light</div>
+          <div className=" md:mt-2 cursor-pointer">
+            <DarkMode defaultTheme={theme}/>
+           </div>
         </div>
       </nav>
+      
     </header>
   );
 }
