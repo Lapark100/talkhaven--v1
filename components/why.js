@@ -9,7 +9,7 @@ export default function WhyUs() {
   return (
     <section>
       <div className="bg-[#fff]">
-        <div className="max-w-7xl mx-auto container pb-16">
+        <div className="max-w-sm md:max-w-7xl mx-auto container pb-16">
           <motion.div
             className="w-full h-auto justify-center items-center gap-8"
             initial={{ opacity: 0, y: 50 }}
@@ -20,7 +20,7 @@ export default function WhyUs() {
             {/* Header */}
             <div className="text-left text-black flex flex-col justify-center items-center font-medium space-y-3 pb-8">
               <h3 className="font-medium text-[2.19rem]">Your Story, Your Space</h3>
-              <p className="text-base font-normal">
+              <p className="text-base font-normal text-center ">
                 TalkHaven is your trusted companion, offering a safe, one-on-one space where your story matters.
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function WhyUs() {
               <Image
                 src={whyImage}
                 alt="why-image"
-                className="w-[80rem] h-[459.58px] object-fit"
+                className="w-full md:w-[80rem] h-[234.58px] md:h-[459.58px] object-cover"
               />
             </motion.div>
           </motion.div>

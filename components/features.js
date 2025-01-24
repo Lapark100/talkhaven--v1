@@ -22,7 +22,7 @@ export default function Features() {
 
   return (
     <div className="bg-[#fff] py-16 flex justify-center items-center">
-      <div className="w-full text-black max-w-7xl mx-auto space-y-8">
+      <div className="w-full text-black max-w-sm md:max-w-7xl mx-auto container space-y-8">
         {/* Header Section */}
         <motion.div
           className="flex flex-col justify-center items-center text-center space-y-3"
@@ -31,7 +31,7 @@ export default function Features() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-medium text-[2.19rem] text-[#333333]">
+          <h1 className="md:font-medium text-[1.2rem] md:text-[2.19rem] text-[#333333]">
             What is challenging your well-being the most right now?
           </h1>
           <p className="text-base font-normal">Start a quick anonymous chat!</p>
@@ -39,7 +39,7 @@ export default function Features() {
 
         {/* Card Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center place-items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -48,7 +48,7 @@ export default function Features() {
           {mental.map((ment) => (
             <motion.div
               key={ment.name}
-              className="w-[270px] h-[350px] rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
+              className="w-full md:w-[270px] h-[350px] rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
               style={{
                 backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(${ment.img_url})`,
                 backgroundSize: "cover",

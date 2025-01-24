@@ -13,13 +13,13 @@ export default function Hero() {
 
   return (
     <section>
-      <div className="max-w-7xl mx-auto container">
-        <div className="w-full h-auto mt-28 flex justify-between pb-20">
+      <div className="max-w-sm md:max-w-7xl mx-auto container">
+        <div className="w-full md:flex h-auto mt-32 md:mt-20 md:justify-between pb-20">
           {/* Left Side */}
-          <div className="w-1/2 px-5 flex flex-col justify-center">
+          <div className="md:w-1/2 px-5  flex flex-col justify-center">
             {/* Title */}
             <motion.h2
-              className=" text-lg md:text-[52px] leading-normal font-medium pr-16"
+              className="text-3xl md:text-[52px] text-center md:text-left leading-normal md:font-medium md:pr-16"
               initial="hidden"
               whileInView="visible"
               variants={fadeInUpVariants}
@@ -28,10 +28,10 @@ export default function Hero() {
             >
               Your Thoughts, Our Safe Haven
             </motion.h2>
-            
+
             {/* Description */}
             <motion.p
-              className="text-lg leading-normal mt-3 pr-6"
+              className="md:text-lg text-center md:text-left leading-normal mt-3 pr-6 pb-8"
               initial="hidden"
               whileInView="visible"
               variants={fadeInUpVariants}
@@ -41,23 +41,26 @@ export default function Hero() {
               To create a safe, anonymous, and judgment-free space where individuals can find comfort, express their emotions, and receive empathetic support.
             </motion.p>
 
-            {/* Button */}
+            {/* Button (Hidden on Small Screens) */}
             <motion.div
-              className="mt-10"
+              className="mt-10 md:max-w-[150px] hidden md:block"
               initial="hidden"
               whileInView="visible"
               variants={fadeInUpVariants}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.2 }}
             >
-              <Link href="/" className="bg-[#ffcc00] py-5 px-9 text-black rounded-xl">
+              <Link 
+                href="/" 
+                className="bg-[#ffcc00] py-4 px-8 text-black text-center font-medium rounded-xl shadow-md hover:bg-[#ffb700] transition-all duration-300"
+              >
                 Get Started
               </Link>
             </motion.div>
           </div>
 
           {/* Hero Image */}
-          <div className="w-1/2 px-5 flex flex-col justify-center">
+          <div className="md:w-1/2 px-5 flex flex-col justify-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -65,13 +68,13 @@ export default function Hero() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.5 }}
             >
-              <Image src={heroimg} className="w-full h-[440px]" alt="hero image" quality={50} />
+              <Image src={heroimg} className="w-full h-[220px] md:h-[440px]" alt="hero image" quality={50} />
             </motion.div>
           </div>
         </div>
 
         {/* Partner Section */}
-        <div className="w-full py-2 flex flex-col items-center justify-center">
+        <div className="w-full hidden py-2 md:flex flex-col items-center justify-center">
           <div className="w-full h-[0.2px] bg-gray-600"></div>
 
           <motion.div

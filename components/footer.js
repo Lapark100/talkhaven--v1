@@ -14,12 +14,12 @@ const currentYear = new Date().getFullYear();
 
         <footer>
             <div className="bg-[#1a1a1a] ">
-                <div className="max-w-7xl mx-auto pb-16 space-y-4">
+                <div className="max-w-sm  md:max-w-7xl mx-auto pb-16 space-y-4">
                     {/* Footer items */}
-                    <div className="flex pt-16 pb-8  space-x-48 ">
+                    <div className="md:flex pt-16 pb-8  md:space-x-48 ">
 
                         {/* Main footer item */}
-                        <div className="space-y-6">
+                        <div className="space-y-6 pb-8">
                         <div><Link href="/"><Image src={logo} width={100} height={100} priority={true} alt="logo"/></Link></div>
 
                         <div className="max-w-[350px]">
@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
 
                         
 
-                        <div className="flex gap-48">
+                        <div className=" space-y-8 md:flex gap-48">
 
                             {/* sub footer item */}
                             <div className="flex flex-col space-y-4">
