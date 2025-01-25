@@ -27,7 +27,7 @@ export default function CallToAction() {
             transition={{ duration: 0.8 }}
             className="text-center md:text-left"
           >
-            <h3 className="text-3xl md:text-5xl text-white pr-[50px] leading-normal">
+            <h3 className="text-3xl md:text-5xl text-white md:pr-[50px] leading-normal">
               Ready to make a change?
             </h3>
           </motion.div>

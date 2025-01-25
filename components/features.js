@@ -26,8 +26,8 @@ export default function Features() {
         {/* Header Section */}
         <motion.div
           className="flex flex-col justify-center items-center text-center space-y-3"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="sm:hidden opacity-0 sm:opacity-100 sm:y-0"
+          whileInView="sm:opacity-100 sm:y-0"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
@@ -40,9 +40,15 @@ export default function Features() {
         {/* Card Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center items-center place-items-center"
-          variants={containerVariants}
+          variants={{
+            hidden: { opacity: 1 }, // No animation on mobile
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1 },
+            },
+          }}
           initial="hidden"
-          whileInView="visible"
+          whileInView="sm:visible"
           viewport={{ once: true, amount: 0.3 }}
         >
           {mental.map((ment) => (
@@ -54,7 +60,10 @@ export default function Features() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
-              variants={itemVariants}
+              variants={{
+                hidden: { opacity: 1 }, // No animation on mobile
+                visible: { opacity: 1, y: 0 },
+              }}
             >
               <div className="flex p-4 justify-between mt-72">
                 <Link

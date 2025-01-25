@@ -9,8 +9,8 @@ export default function Downloads() {
   return (
     <section>
       <div className="bg-[#fff] pt-16 flex flex-col justify-center">
-        <div className="max-w-5xl mx-auto space-y-4">
-          {/* Header */}
+        <div className=" max-w-sm md:max-w-5xl mx-auto space-y-4">
+          {/* Header */} 
           <motion.div
             className="pt-4"
             initial={{ opacity: 0, y: 50 }}
@@ -18,7 +18,7 @@ export default function Downloads() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="font-medium text-[40px] px-[10rem] text-black text-center pb-8">
+            <h3 className=" md:font-medium text-[24px] md:text-[40px] md:px-[10rem] text-black text-center pb-8">
               Download the app and access the support you need – anytime,
               anywhere
             </h3>
@@ -31,7 +31,7 @@ export default function Downloads() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-base font-normal text-black text-center px-[10rem]">
+            <p className="text-base font-normal text-black text-center md:px-[10rem]">
               Get access to a mood tracker, guided journaling, courses,
               worksheets, progress reports – always free, always yours.
             </p>
@@ -46,12 +46,12 @@ export default function Downloads() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Image
-              className="w-[166px] h-[48px]"
+              className=" w-[93px] md:w-[166px] md:h-[48px] h-[34px"
               src={apple}
               alt="app-store"
             />
             <Image
-              className="w-[166px] h-[48px]"
+              className="w-[93px] md:w-[166px] md:h-[48px] h-[34px]"
               src={google}
               alt="google-store"
             />
@@ -66,7 +66,7 @@ export default function Downloads() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <Image
-              className="w-[770px] h-[516px]"
+              className=" w-[385px] h-[258px] md:w-[770px] md:h-[516px]"
               src={app}
               alt="app-image"
             />

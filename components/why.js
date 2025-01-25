@@ -60,14 +60,14 @@ export default function WhyUs() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Icon Section */}
-                  <div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full">
-                    <CircleCheck className="w-5 h-5 text-black" />
+                  <div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full font-normal">
+                    <CircleCheck className="w-5 h-5 text-black font-normal" />
                   </div>
 
                   {/* Card Content */}
                   <div className="flex flex-col flex-grow">
-                    <h3 className="text-lg font-medium mt-2">{con.name}</h3>
-                    <p className="text-sm text-black mt-2 font-normal flex-grow">{con.description}</p>
+                    <h3 className="text-lg  mt-2 font-normal">{con.name}</h3>
+                    <p className="text-sm text-black mt-2 font-extralight flex-grow">{con.description}</p>
                   </div>
                 </motion.div>
               ))}
