@@ -36,7 +36,7 @@ export default function WhyUs() {
               <Image
                 src={whyImage}
                 alt="why-image"
-                className="w-full md:w-[80rem] h-[234.58px] md:h-[459.58px] object-cover"
+                className="w-full md:w-[80rem] h-[350px] md:h-[459.58px] object-cover"
               />
             </motion.div>
           </motion.div>

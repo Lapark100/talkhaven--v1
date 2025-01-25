@@ -3,7 +3,7 @@
 import Link from "next/link";
 import logo from "../public/images/TalkHaven.png";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import DarkMode from "./dark-mode";
@@ -13,6 +13,7 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(""); // Track which menu is open
   const menuTimeout = useRef(null); // Ref for timeout to avoid re-renders
   const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track mobile menu state
 
   // Monitor scroll state
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function Header() {
       }`}
     >
       <nav
-        className={`max-w-7xl mx-auto container flex justify-between items-center py-4 ${
+        className={`max-w-7xl mx-auto container flex justify-between items-center py-4 px-4 md:px-0 ${
           isScrolled ? "text-black" : "text-black dark:text-white"
         }`}
       >
@@ -64,8 +65,22 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Links */}
-        <div className="flex space-x-10 relative">
+        {/* Hamburger Icon for Mobile */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-black dark:text-white focus:outline-none"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-10 relative">
           {/* About Us */}
           <Dropdown
             label="About Us"
@@ -117,16 +132,22 @@ export default function Header() {
           />
 
           {/* Static Links */}
-          <Link href="/" className={`${linkHoverClass} text-lg font-medium`}>
+          <Link
+            href="/"
+            className={`${linkHoverClass} text-lg font-medium`}
+          >
             Price
           </Link>
-          <Link href="/" className={`${linkHoverClass} text-lg font-medium`}>
+          <Link
+            href="/"
+            className={`${linkHoverClass} text-lg font-medium`}
+          >
             Contact Us
           </Link>
         </div>
 
         {/* Actions */}
-        <div className="flex space-x-6 items-center">
+        <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
             <Link href="/">Get Started</Link>
           </div>
@@ -135,6 +156,30 @@ export default function Header() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white dark:bg-black shadow-lg p-4 flex flex-col space-y-4">
+          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+            About Us
+          </Link>
+          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+            Services
+          </Link>
+          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+            Price
+          </Link>
+          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+            Contact Us
+          </Link>
+          <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
+            <Link href="/">Get Started</Link>
+          </div>
+          <div className="mt-2">
+            <DarkMode defaultTheme={theme} />
+          </div>
+        </div>
+      )}
     </header>
   );
 }
