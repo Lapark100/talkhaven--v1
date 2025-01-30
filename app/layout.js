@@ -1,7 +1,8 @@
 import {Roboto } from 'next/font/google';
 import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import "./globals.css";
-
+import Footer from "@/components/footer";
+import Header from "../components/header";
 
 const signika = Roboto({
   weight: ['400', '700'],
@@ -22,9 +23,11 @@ export default function RootLayout({ children }) {
     
      
       <body className={signika.className}>
+      
       <main className="mt-12">
       {children}
       </main>
+      <Footer />
       </body>
     </html>
   )

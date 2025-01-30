@@ -8,7 +8,7 @@ import { useState, useRef, useEffect } from "react";
 import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import DarkMode from "./dark-mode";
 
-export default function Header() {
+export default function PageHeader() {
   const theme = useServerDarkMode();
   const [openMenu, setOpenMenu] = useState(""); // Track which menu is open
   const menuTimeout = useRef(null); // Ref for timeout to avoid re-renders
@@ -149,7 +149,7 @@ export default function Header() {
         {/* Actions */}
         <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/register">Get Started</Link>
+            <Link href="/log-in">Log In</Link>
           </div>
           <div className="md:mt-2 cursor-pointer">
             <DarkMode defaultTheme={theme} />
@@ -173,7 +173,7 @@ export default function Header() {
             Contact Us
           </Link>
           <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/">Get Started</Link>
+            <Link href="/log-in">Log In</Link>
           </div>
           <div className="mt-2">
             <DarkMode defaultTheme={theme} />
