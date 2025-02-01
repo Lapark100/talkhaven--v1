@@ -173,7 +173,7 @@ export default function Header() {
             Contact Us
           </Link>
           <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/">Get Started</Link>
+            <Link href="/register">Get Started</Link>
           </div>
           <div className="mt-2">
             <DarkMode defaultTheme={theme} />
