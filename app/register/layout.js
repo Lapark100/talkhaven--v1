@@ -1,12 +1,13 @@
-import { ChevronLeft } from "lucide-react"
 import Link from "next/link"
+import { ChevronLeft } from "lucide-react"
+import { variants, sizes } from "@/const/consts";
 
 export default function Layout({children}) {
     return (
     <>
     
     <div className="absolute left-8 top-8">
-    <Link href="/" className="text-base px-5 py-3 flex items-center space-x-2 rounded-full bg-white dark:bg-black hover:bg-gray-200 dark:hover:bg-gray-500 disabled:opacity-50 ">
+    <Link href="/" className={`${variants['ghost']} ${sizes['base']} flex items-center space-x-2 text-sm`}>
         <ChevronLeft className="w-4 h-4" />
         <span>Back</span>
     </Link>

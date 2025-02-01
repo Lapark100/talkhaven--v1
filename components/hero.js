@@ -51,7 +51,7 @@ export default function Hero() {
               transition={{ duration: 1.2 }}
             >
               <Link 
-                href="/" 
+                href="/about" 
                 className="bg-[#ffcc00] py-4 px-8 text-black text-center font-medium rounded-xl shadow-md hover:bg-[#ffb700] transition-all duration-300"
               >
                 Get Started

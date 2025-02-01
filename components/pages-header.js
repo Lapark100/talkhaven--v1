@@ -83,14 +83,14 @@ export default function PageHeader() {
         <div className="hidden md:flex space-x-10 relative">
           {/* About Us */}
           <Dropdown
-            label="About Us"
+            label="Company"
             open={openMenu === "about"}
             onMouseEnter={() => handleMouseEnter("about")}
             onMouseLeave={handleMouseLeave}
             links={[
               {
-                href: "/about/history",
-                title: "Our History",
+                href: "/about",
+                title: "About Us",
                 desc: "Learn more about how we started.",
               },
               {

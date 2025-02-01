@@ -83,14 +83,14 @@ export default function Header() {
         <div className="hidden md:flex space-x-10 relative">
           {/* About Us */}
           <Dropdown
-            label="About Us"
+            label="Company"
             open={openMenu === "about"}
             onMouseEnter={() => handleMouseEnter("about")}
             onMouseLeave={handleMouseLeave}
             links={[
               {
-                href: "/about/history",
-                title: "Our History",
+                href: "/about",
+                title: "About Us",
                 desc: "Learn more about how we started.",
               },
               {
@@ -161,7 +161,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-black shadow-lg p-4 flex flex-col space-y-4">
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
-            About Us
+            Company
           </Link>
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
             Services
