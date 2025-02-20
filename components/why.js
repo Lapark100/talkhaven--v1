@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import whyImage from "../public/images/xxl_exness_why_exness_4827c10344.jpg";
 import { CircleCheck } from "lucide-react";
 import consts from "../const/const";
-import whyImage from "../public/images/xxl_exness_why_exness_4827c10344.jpg";
+
 
 export default function WhyUs() {
   return (

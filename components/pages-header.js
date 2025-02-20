@@ -8,7 +8,7 @@ import { useState, useRef, useEffect } from "react";
 import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import DarkMode from "./dark-mode";
 
-export default function PageHeader() {
+export default function Header() {
   const theme = useServerDarkMode();
   const [openMenu, setOpenMenu] = useState(""); // Track which menu is open
   const menuTimeout = useRef(null); // Ref for timeout to avoid re-renders
@@ -149,7 +149,7 @@ export default function PageHeader() {
         {/* Actions */}
         <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/log-in">Log In</Link>
+            <Link href="/login">Get Started</Link>
           </div>
           <div className="md:mt-2 cursor-pointer">
             <DarkMode defaultTheme={theme} />
@@ -161,7 +161,7 @@ export default function PageHeader() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-black shadow-lg p-4 flex flex-col space-y-4">
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
-            About Us
+            Company
           </Link>
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
             Services
@@ -173,7 +173,7 @@ export default function PageHeader() {
             Contact Us
           </Link>
           <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/log-in">Log In</Link>
+            <Link href="/login">Get Started</Link>
           </div>
           <div className="mt-2">
             <DarkMode defaultTheme={theme} />

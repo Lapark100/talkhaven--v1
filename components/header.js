@@ -133,7 +133,7 @@ export default function Header() {
 
           {/* Static Links */}
           <Link
-            href="/"
+            href="/price"
             className={`${linkHoverClass} text-lg font-medium`}
           >
             Price
@@ -149,7 +149,7 @@ export default function Header() {
         {/* Actions */}
         <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/register">Get Started</Link>
+            <Link href="/login">Get Started</Link>
           </div>
           <div className="md:mt-2 cursor-pointer">
             <DarkMode defaultTheme={theme} />
@@ -166,14 +166,14 @@ export default function Header() {
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
             Services
           </Link>
-          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+          <Link href="/price" className="text-lg font-medium text-black dark:text-white">
             Price
           </Link>
           <Link href="/" className="text-lg font-medium text-black dark:text-white">
             Contact Us
           </Link>
           <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/register">Get Started</Link>
+            <Link href="/login">Get Started</Link>
           </div>
           <div className="mt-2">
             <DarkMode defaultTheme={theme} />
