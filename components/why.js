@@ -1,4 +1,5 @@
-"use client";
+'use client'
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import whyImage from "../public/images/xxl_exness_why_exness_4827c10344.jpg";
@@ -7,6 +8,7 @@ import consts from "../const/const";
 
 
 export default function WhyUs() {
+  
   return (
     <section>
       <div className="bg-[#fff]">

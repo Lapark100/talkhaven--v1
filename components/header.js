@@ -8,6 +8,9 @@ import { useState, useRef, useEffect } from "react";
 import useServerDarkMode from "@/hooks/use-server-dark-mode";
 import DarkMode from "./dark-mode";
 
+
+
+
 export default function Header() {
   const theme = useServerDarkMode();
   const [openMenu, setOpenMenu] = useState(""); // Track which menu is open
@@ -15,6 +18,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track mobile menu state
 
+  
   // Monitor scroll state
   useEffect(() => {
     const handleScroll = () => {
@@ -139,7 +143,7 @@ export default function Header() {
             Price
           </Link>
           <Link
-            href="/"
+            href="/contact"
             className={`${linkHoverClass} text-lg font-medium`}
           >
             Contact Us
@@ -169,7 +173,7 @@ export default function Header() {
           <Link href="/price" className="text-lg font-medium text-black dark:text-white">
             Price
           </Link>
-          <Link href="/" className="text-lg font-medium text-black dark:text-white">
+          <Link href="/contact" className="text-lg font-medium text-black dark:text-white">
             Contact Us
           </Link>
           <div className=" max-w-[120px] py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">

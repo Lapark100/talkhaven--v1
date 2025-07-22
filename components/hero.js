@@ -1,15 +1,19 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
 import heroimg from "../public/images/Frame-1000001257-1.webp";
 import { BookText, Headset, ShieldCheck, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+
+export  default function Hero() {
   // Animation variants
   const fadeInUpVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
+
 
   return (
     <section>
