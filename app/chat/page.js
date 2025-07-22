@@ -41,7 +41,7 @@ export default function ChatUI() {
   );
 
   return (
-    <Card className="w-full max-w-3xl mx-auto mt-10 rounded-2xl shadow-md">
+    <Card className="w-full max-w-6xl mx-auto mt-10 rounded-2xl shadow-md">
       <CardContent className="p-0">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2 rounded-t-2xl">
