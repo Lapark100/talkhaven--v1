@@ -4,7 +4,7 @@ import Features from "../components/features";
 import Header from "@/components/header";
 import Hero from "../components/hero";
 import WhyUs from "../components/why";
-// import IsAuth from "@/components/isAuth";
+
 
 
 
@@ -20,7 +20,6 @@ export default async function Home() {
     <WhyUs />
     <CallToAction />
     <FAQ />
-    {/* <IsAuth /> */}
     </div>
   );
 }
