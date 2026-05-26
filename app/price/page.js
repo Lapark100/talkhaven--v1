@@ -1,3 +1,4 @@
+import CheckoutButton from "@/components/check-out-button";
 import { MessageSquare, House } from "lucide-react";
 import Link from "next/link";
 
@@ -21,21 +22,49 @@ export default function Price() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 py-16">
                     {[
-                        { title: "Weekly", price: "$3.67" },
-                        { title: "Monthly", price: "$11.34" },
-                        { title: "Quarterly", price: "$30.69" },
-                        { title: "Yearly", price: "$130.11" }
-                    ].map((plan, index) => (
-                        <div key={index} className="flex flex-col justify-between w-full bg-gray-100 rounded-2xl p-8">
-                            <div className="flex flex-col space-y-3 text-black font-semibold">
-                                <House className="w-8 h-8" />
-                                <h4 className="text-xl">{plan.title}</h4>
-                                <h4 className="text-3xl">{plan.price}</h4>
-                                <p className="text-[16px] font-normal">For individuals to organize personal projects and life</p>
+    {
+        title: "One-Off",
+        displayPrice: "₦20,000",
+        amount: 20000
+    },
+    {
+        title: "Weekly",
+        displayPrice: "₦40,000",
+        amount: 40000
+    },
+    {
+        title: "Monthly",
+        displayPrice: "₦100,000",
+        amount: 100000
+    },
+    {
+        title: "Enterprise",
+        displayPrice: "₦500,000",
+        amount: 500000
+    }
+].map((plan, index) => (
+    <div
+        key={index}
+        className="flex flex-col justify-between w-full bg-gray-100 rounded-2xl p-8"
+    >
+
+        <div className="flex flex-col space-y-3 text-black font-semibold">
+
+            <House className="w-8 h-8" />
+
+            <h4 className="text-xl">
+                {plan.title}
+            </h4>
+
+            <h4 className="text-3xl">
+                {plan.displayPrice}
+            </h4>
+
+            <p className="text-[16px] font-normal">
+                For individuals to organize personal projects and life
+            </p>
                             </div>
-                            <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black text-center mt-4">
-                                <Link href="/login">Get Started</Link>
-                            </div>
+                            <CheckoutButton price={plan.amount} />
                             <ul className="py-1 font-normal text-base text-black flex flex-col justify-center space-y-3 md:text-[16px] mt-4">
                                 <li>Collaborative workspace</li>
                                 <li>Integrate with Slack, GitHub & more</li>

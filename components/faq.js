@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import faq from "../const/faqContent";
 import Downloads from "./download";
+import CheckoutButton from "./check-out-button";
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState(null); // Track the active accordion index
@@ -67,6 +68,7 @@ export default function FAQ() {
           ))}
           <Downloads />
         </motion.div>
+       
       </div>
     </section>
   );

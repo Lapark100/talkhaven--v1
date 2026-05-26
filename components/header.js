@@ -94,17 +94,17 @@ export default function Header() {
             links={[
               {
                 href: "/about",
-                title: "About Us",
+                title: "What is Talk Haven?",
                 desc: "Learn more about how we started.",
               },
               {
                 href: "/about/team",
-                title: "Our Team",
+                title: "Who is it for?",
                 desc: "Meet the people behind our mission.",
               },
               {
                 href: "/about/mission",
-                title: "Our Mission",
+                title: "How it works?",
                 desc: "Discover what drives our goals.",
               },
             ]}
@@ -119,17 +119,17 @@ export default function Header() {
             links={[
               {
                 href: "/services/consulting",
-                title: "Consulting",
+                title: "Anonymous Chat",
                 desc: "Expert advice tailored for your needs.",
               },
               {
                 href: "/services/support",
-                title: "Support",
+                title: "Public Chat Rooms",
                 desc: "24/7 assistance to keep you running.",
               },
               {
                 href: "/services/training",
-                title: "Training",
+                title: "Rants",
                 desc: "Learn and grow with our experts.",
               },
             ]}
@@ -153,7 +153,7 @@ export default function Header() {
         {/* Actions */}
         <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/login">Get Started</Link>
+            <Link href="/login">Book a Session</Link>
           </div>
           <div className="md:mt-2 cursor-pointer">
             <DarkMode defaultTheme={theme} />
