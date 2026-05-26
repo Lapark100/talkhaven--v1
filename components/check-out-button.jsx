@@ -3,8 +3,8 @@
 import axios from "axios";
 
 export default function CheckoutButton({ price }) {
-    console.log(price)
-    alert(price)
+  
+
 
   const handleCheckout = async () => {
       
