@@ -153,7 +153,7 @@ export default function Header() {
         {/* Actions */}
         <div className="hidden md:flex space-x-6 items-center">
           <div className="py-3 px-4 rounded-xl bg-[#ffcc00] text-black hover:text-white border-solid border-black">
-            <Link href="/login">Book a Session</Link>
+            <Link href="/login">Start Anonymous Chat</Link>
           </div>
           <div className="md:mt-2 cursor-pointer">
             <DarkMode defaultTheme={theme} />

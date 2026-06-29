@@ -21,7 +21,6 @@ export default function CheckoutButton({ price }) {
 
       window.location.href =
         response.data.data.authorization_url;
-
     } catch (error) {
       console.log(error);
     }

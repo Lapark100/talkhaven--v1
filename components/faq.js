@@ -16,7 +16,7 @@ export default function FAQ() {
 
   return (
     <section>
-      <div className="bg-[#fff] pt-8 flex flex-col justify-center">
+      <div className="bg-[#fff] py-8  flex flex-col justify-center">
         <motion.div
           className=" max-w-sm md:max-w-6xl mx-auto space-y-3"
           initial={{ opacity: 0, y: 50 }}
@@ -54,7 +54,7 @@ export default function FAQ() {
 
               {/* Accordion Content */}
               <div
-                className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+                className={`overflow-hidden pb-4ß transition-[max-height] duration-500 ease-in-out ${
                   activeIndex === index ? "max-h-[500px]" : "max-h-0"
                 }`}
               >
@@ -66,7 +66,7 @@ export default function FAQ() {
               </div>
             </motion.div>
           ))}
-          <Downloads />
+          {/* <Downloads /> */}
         </motion.div>
        
       </div>

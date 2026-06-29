@@ -1,82 +1,115 @@
 import CheckoutButton from "@/components/check-out-button";
 import { MessageSquare, House } from "lucide-react";
-import Link from "next/link";
 
 export default function Price() {
-    return (
-        <section className="bg-white">
-            <div className="max-w-sm md:max-w-7xl mx-auto container">
-                <div className="w-full flex flex-col items-center justify-center h-auto mt-32 md:mt-20 pb-0">
-                    <div className="space-y-3 flex flex-col items-center justify-center pt-16">
-                        <div className="flex justify-center items-center bg-gray-100 text-black gap-2 rounded-full w-[227px] h-[40px]">
-                            <MessageSquare className="w-[18px] h-[18px]" />
-                            <p>Safe & Secure Chatting</p>
-                        </div>
-                        <div className="md:w-[700px]">
-                            <h2 className="text-[2rem] md:text-[2.8rem] text-[black] font-bold text-center leading-tight">
-                                One tool for your whole company. Free for teams to try.
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 py-16">
-                    {[
+  const plans = [
     {
-        title: "One-Off",
-        displayPrice: "₦20,000",
-        amount: 20000
+      title: "Weekly Group Pass",
+      displayPrice: "₦10,000/week",
+      amount: 10000,
+      buttonText: "Join This Week's Session",
+      features: [
+        "Access to one chosen 1-hour group support session weekly",
+        "Anonymous participation",
+        "Safe and judgment-free environment",
+        "Opportunity to share or simply listen",
+      ],
     },
     {
-        title: "Weekly",
-        displayPrice: "₦40,000",
-        amount: 40000
+      title: "Monthly Group Membership",
+      displayPrice: "₦35,000/month",
+      amount: 35000,
+      buttonText: "Become a Monthly Member",
+      features: [
+        "Access to one chosen support group every week for a month (4 sessions)",
+        "Discounted membership access",
+        "Anonymous participation",
+        "Consistent support community",
+      ],
     },
     {
-        title: "Monthly",
-        displayPrice: "₦100,000",
-        amount: 100000
+      title: "Weekly Multi-Group Pass",
+      displayPrice: "₦17,500/week",
+      amount: 17500,
+      buttonText: "Join Multiple Groups",
+      features: [
+        "Access to up to 2 different support group sessions weekly",
+        "Join groups based on your needs",
+        "Anonymous participation",
+        "Support across multiple communities",
+      ],
     },
     {
-        title: "Enterprise",
-        displayPrice: "₦500,000",
-        amount: 500000
-    }
-].map((plan, index) => (
-    <div
-        key={index}
-        className="flex flex-col justify-between w-full bg-gray-100 rounded-2xl p-8"
-    >
+      title: "Enterprise",
+      displayPrice: "₦500,000",
+      amount: 500000,
+      buttonText: "Contact Us",
+      features: [
+        "Tailored support programs",
+        "Employee wellness workshops",
+        "Dedicated account manager",
+        "Custom onboarding & reporting",
+      ],
+    },
+  ];
 
-        <div className="flex flex-col space-y-3 text-black font-semibold">
-
-            <House className="w-8 h-8" />
-
-            <h4 className="text-xl">
-                {plan.title}
-            </h4>
-
-            <h4 className="text-3xl">
-                {plan.displayPrice}
-            </h4>
-
-            <p className="text-[16px] font-normal">
-                For individuals to organize personal projects and life
-            </p>
-                            </div>
-                            <CheckoutButton price={plan.amount} />
-                            <ul className="py-1 font-normal text-base text-black flex flex-col justify-center space-y-3 md:text-[16px] mt-4">
-                                <li>Collaborative workspace</li>
-                                <li>Integrate with Slack, GitHub & more</li>
-                                <li>Basic page analytics</li>
-                                <li>7 day page history</li>
-                                <li>Invite 10 guests</li>
-                            </ul>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <section className="bg-white">
+      <div className="container mx-auto max-w-sm md:max-w-7xl">
+        <div className="flex flex-col items-center justify-center mt-32 md:mt-20">
+          <div className="flex flex-col items-center justify-center pt-16 space-y-3">
+            <div className="flex items-center justify-center w-[227px] h-[40px] gap-2 rounded-full bg-gray-100 text-black">
+              <MessageSquare className="w-[18px] h-[18px]" />
+              <p>Safe & Secure Chatting</p>
             </div>
-        </section>
-    );
+
+            <div className="md:w-[700px]">
+              <h2 className="text-[2rem] md:text-[2.8rem] text-black font-bold text-center leading-tight">
+                One tool for your whole company. Free for teams to try.
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 py-16 md:grid-cols-4">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className="flex flex-col justify-between p-8 bg-gray-100 rounded-2xl"
+            >
+              <div>
+                <div className="flex flex-col space-y-3 text-black">
+                  <House className="w-8 h-8" />
+
+                  <h4 className="text-xl font-semibold">{plan.title}</h4>
+
+                  <h4 className="text-3xl font-bold">
+                    {plan.displayPrice}
+                  </h4>
+
+                  <p className="font-medium">Includes:</p>
+                </div>
+
+                <ul className="mt-4 space-y-3 text-[16px] text-black">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span>•</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8">
+                <CheckoutButton
+                  price={plan.amount}
+                  text={plan.buttonText}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
- 

@@ -14,16 +14,16 @@ export default function Footer() {
                     {/* Main footer item */}
                     <div className="space-y-6 pb-8 max-w-[350px]">
                         <Link href="/">
-                            <Image src={logo} width={100} height={100} priority={true} alt="logo"/>
+                            <Image src={logo} width={100} height={100} priority={true} alt="logo" />
                         </Link>
                         <p className="text-base font-normal text-gray-400">
-                            Your trusted platform for compassionate and confidential online therapy. 
-                            Connecting you to licensed therapists anytime, anywhere.
+                            TalkHaven is a safe, anonymous emotional support platform designed to help people feel
+                            heard, supported, and less alone.
                         </p>
                         <div className="flex gap-3 text-white">
-                            <Instagram className="w-6 h-6"/>
-                            <X className="w-6 h-6"/>
-                            <Linkedin className="w-6 h-6"/>
+                            <Instagram className="w-6 h-6" />
+                            <X className="w-6 h-6" />
+                            <Linkedin className="w-6 h-6" />
                         </div>
                     </div>
 
