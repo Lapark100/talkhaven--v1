@@ -55,7 +55,7 @@ export default function CallToAction() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link
-              href="/"
+              href="/price"
               className="bg-[#ffcc00] py-3 px-5 md:py-5 md:px-9 text-black rounded-xl"
             >
               Get Started
