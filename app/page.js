@@ -4,6 +4,7 @@ import Features from "../components/features";
 import Header from "@/components/header";
 import Hero from "../components/hero";
 import WhyUs from "../components/why";
+import HowItWorks from "@/components/how-it-works";
 
 
 
@@ -16,6 +17,7 @@ export default async function Home() {
     <div>
     <Header />
     <Hero />
+    <HowItWorks />
     <Features />
     <WhyUs />
     <CallToAction />

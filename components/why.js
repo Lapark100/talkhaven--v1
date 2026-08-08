@@ -1,82 +1,109 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import whyImage from "../public/images/xxl_exness_why_exness_4827c10344.jpg";
 import { CircleCheck } from "lucide-react";
+
+import whyImage from "../public/images/xxl_exness_why_exness_4827c10344.jpg";
 import consts from "../const/const";
 
-
 export default function WhyUs() {
-  
   return (
-    <section>
-      <div className="bg-[#fff]">
-        <div className="max-w-sm md:max-w-7xl mx-auto container pb-16">
-          <motion.div
-            className="w-full h-auto justify-center items-center gap-8"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-          >
-            {/* Header */}
-            <div className="text-left text-black flex flex-col justify-center items-center font-medium space-y-3 pb-8">
-              <h3 className="font-medium text-[2.19rem]">Your Story, Your Space</h3>
-              <p className="text-base font-normal text-center ">
-                TalkHaven is your trusted companion, offering a safe, one-on-one space where your story matters.
-              </p>
-            </div>
+    <section className="w-full bg-white py-20 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-            {/* Image Section */}
+        {/* Header */}
+        <motion.div
+          className="mx-auto max-w-3xl text-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-400">
+            Why TalkHaven
+          </span>
+
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight text-neutral-950 sm:text-5xl lg:text-6xl">
+            Your story.
+            <br />
+            <span className="text-neutral-400">Your space.</span>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-neutral-500 sm:text-base">
+            TalkHaven is your trusted companion, offering a safe,
+            one-on-one space where your story matters.
+          </p>
+        </motion.div>
+
+        {/* Image */}
+        <motion.div
+          className="relative mt-12 overflow-hidden rounded-[28px] sm:mt-16 lg:rounded-[36px]"
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <Image
+            src={whyImage}
+            alt="TalkHaven support space"
+            width={1600}
+            height={900}
+            className="h-[300px] w-full object-cover sm:h-[400px] lg:h-[520px]"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        </motion.div>
+
+        {/* Benefits */}
+        <div className="mt-10 grid grid-cols-1 border-y border-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
+          {consts.map((con, index) => (
             <motion.div
-              className="flex justify-center items-center rounded-xl overflow-hidden"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8 }}
+              key={con.name || index}
+              className={`
+                group px-1 py-8
+                sm:px-7
+                lg:px-8
+                ${index !== 0 ? "border-t border-neutral-200 sm:border-t-0" : ""}
+                ${index % 2 !== 0 ? "sm:border-l sm:border-neutral-200" : ""}
+                ${index >= 2 ? "lg:border-l lg:border-neutral-200" : ""}
+              `}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
             >
-              <Image
-                src={whyImage}
-                alt="why-image"
-                className="w-full md:w-[80rem] h-[350px] md:h-[459.58px] object-cover"
-              />
+              {/* Icon */}
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#ffcc00] transition-transform duration-300 group-hover:scale-110">
+                <CircleCheck
+                  className="h-[18px] w-[18px] text-neutral-950"
+                  strokeWidth={2}
+                />
+              </div>
+
+              {/* Text */}
+              <div className="mt-5">
+                <h3 className="text-base font-semibold tracking-tight text-neutral-950">
+                  {con.name}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-neutral-500">
+                  {con.description}
+                </p>
+              </div>
             </motion.div>
-          </motion.div>
-
-          {/* Cards Section */}
-          <motion.div
-            className="mt-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {consts.map((con, index) => (
-                <motion.div
-                  className="w-full bg-[#FFF4B3] shadow-md rounded-xl p-4 text-black flex flex-col justify-between"
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  {/* Icon Section */}
-                  <div className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full font-normal">
-                    <CircleCheck className="w-5 h-5 text-black font-normal" />
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="flex flex-col flex-grow">
-                    <h3 className="text-lg  mt-2 font-normal">{con.name}</h3>
-                    <p className="text-sm text-black mt-2 font-extralight flex-grow">{con.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          ))}
         </div>
+
       </div>
     </section>
   );
